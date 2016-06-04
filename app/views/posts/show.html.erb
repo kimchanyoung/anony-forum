@@ -1,0 +1,15 @@
+<h1><%= @post.title %></h1>
+<h3><%= @post.description %></h3>
+
+<ul>
+<% @post.comments.order(:created_at).each do |cmt| %>
+  <li><%= cmt.content %></li>
+<% end %>
+</ul>
+
+<%= form_for(Comment.new, url: comments_path) do |f| %>
+  <%= f.text_field :content %>
+  <%= f.hidden_field :post_id, value: @post.id %>
+  <%= f.submit %>
+<% end %>
+
