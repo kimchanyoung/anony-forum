@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160528190105) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "comments", force: :cascade do |t|
     t.integer  "post_id"
     t.string   "content"
@@ -21,8 +24,10 @@ ActiveRecord::Schema.define(version: 20160528190105) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string "title"
-    t.string "description"
+    t.string   "title"
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
