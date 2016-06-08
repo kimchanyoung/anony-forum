@@ -1,6 +1,10 @@
-<%= link_to "Create a new post", new_post_path %>
-<ul>
-<% @posts.each do |p| %>
-<li><%= link_to p.title, post_path(p) %></li>
-<% end %>
-</ul>
+<div class="row">
+  <div class="small-10 small-offset-1 columns">
+    <%= link_to "Create a new post", new_post_path %>
+    <ul>
+    <% @posts.each do |p| %>
+     <li><%= link_to p.title, post_path(p) %></li>
+    <% end %>
+    </ul>
+  </div>
+</div>

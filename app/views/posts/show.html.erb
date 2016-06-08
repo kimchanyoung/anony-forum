@@ -1,15 +1,30 @@
-<h1><%= @post.title %></h1>
-<h3><%= @post.description %></h3>
+<div class="row">
+  <div class="small-10 small-offset-1 columns">
+    <h3><%= @post.title %></h3>
+  </div>
+</div>
+<div class="row">
+  <div class="small-10 small-offset-1 columns">
+    <h4><%= @post.description %></h4>
+  </div>
+</div>
 
-<ul>
-<% @post.comments.order(:created_at).each do |cmt| %>
-  <li><%= cmt.content %></li>
-<% end %>
-</ul>
+<div class="row">
+  <div class="small-10 small-offset-1 columns">
+    <ul>
+      <% @post.comments.order(:created_at).each do |cmt| %>
+        <li><%= cmt.content %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
 
-<%= form_for(Comment.new, url: comments_path) do |f| %>
-  <%= f.text_field :content %>
-  <%= f.hidden_field :post_id, value: @post.id %>
-  <%= f.submit %>
-<% end %>
-
+<div class="row">
+  <div class="small-10 small-offset-1 columns">
+    <%= form_for(Comment.new, url: comments_path) do |f| %>
+      <%= f.text_field :content %>
+      <%= f.hidden_field :post_id, value: @post.id %>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>
