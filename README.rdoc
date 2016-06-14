@@ -3,14 +3,12 @@
 Anony-forum is an anonymous forum built for demonstrative purposes.
 
 To get it up and running, first install all gems with:
-<li><code>bundle install</code></li>
+* <code>bundle install</code>
 Then create and migrate the database with
-<li><code>rake db:create</code></li>
-<li><code>rake db:migrate</code></li>
-
+* <code>rake db:create</code>
+* <code>rake db:migrate</code>
 Then run the console with
-<li><code>rails s</code></li>
-
+* <code>rails s</code>*
 You should be able to see the app running at localhost:3000 
 
 Enjoy!
